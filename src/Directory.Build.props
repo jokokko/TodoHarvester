@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>  
+  <PropertyGroup>
+  <Title>TodoHarvester</Title>
+    <Product>TodoHarvester</Product>
+	<Description>Harvest TODO comments from a codebase using Roslyn. Optionally push TODOs to YouTrack.</Description>
+    <PackageProjectUrl>https://github.com/jokokko/todoharvester</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jokokko/todoharvester/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/jokokko/todoharvester</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>TodoHarvester</PackageTags>
+    <Authors>Joona-Pekka Kokko</Authors>
+    <Copyright>Copyright 2018. Joona-Pekka Kokko</Copyright>
+  </PropertyGroup>  
+</Project>
