@@ -9,12 +9,15 @@ namespace TodoHarvester.Services
 	public sealed class TodoYouTrackReporter : ITodoReporter, IDisposable
 	{
 		private readonly string project;
+		private readonly IEnumerable<string> issueCommands;
 		private readonly YouTrackReporter reporter;
 
-		public TodoYouTrackReporter(string youTrackUri, string username, string password, string project)
+		public TodoYouTrackReporter(string youTrackUri, string username, string password, string project,
+			IEnumerable<string> issueCommands = null)
 		{
 			reporter = new YouTrackReporter(username, password, new Uri(youTrackUri), true);
 			this.project = project;
+			this.issueCommands = issueCommands ?? Enumerable.Empty<string>();
 		}
 
 		public void Report(IEnumerable<TodoComment> todos)
@@ -38,6 +41,12 @@ namespace TodoHarvester.Services
 				}
 				
 				var i = reporter.CreateIssue(project, summary, description).Result;
+
+				foreach (var c in issueCommands)
+				{
+					reporter.ExecuteAgainstIssue(i, c).Wait();
+				}
+
 				Console.WriteLine($"Created {i} ({summary})");
 			}
 		}

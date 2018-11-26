@@ -1,4 +1,6 @@
-﻿namespace TodoHarvester.Model
+﻿using System.Collections.Generic;
+
+namespace TodoHarvester.Model
 {
 	public sealed class YouTrackInput : TodoInput
 	{
@@ -14,5 +16,8 @@
 		[Oakton.Description("YouTrack Project")]
 		[Oakton.FlagAlias("yproj", true)]
 		public string YouTrackProjectFlag;
+		[Oakton.Description("Issue commands, executed against each created issue. E.g. \"type bug\"")]
+		[Oakton.FlagAlias("ic", true)]
+		public IEnumerable<string> IssueCommandsFlag;
 	}
 }

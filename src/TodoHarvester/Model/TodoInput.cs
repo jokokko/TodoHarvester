@@ -14,5 +14,8 @@ namespace TodoHarvester.Model
 		[Oakton.Description("Don't normalize whitespace and newlines")]
 		[Oakton.FlagAlias("w", true)]
 		public bool KeepWhitespaceFlag;
-    }
+	    [Oakton.Description("Project regex. Only compile projects with name matching the regex")]
+	    [Oakton.FlagAlias("pr", true)]
+		public string ProjectRegexFlag;
+	}
 }

@@ -34,7 +34,7 @@ namespace TodoHarvester.Commands
 				(input.TodoRegexesFlag ?? new List<string> { Constants.DefaultTodoPattern }).Select(x =>
 					new Regex(x, flags));
 
-			await service.FindAndReportTodos(input.Solutions.Where(File.Exists), regexes, reporter, input.KeepWhitespaceFlag, solutionProperties);
+			await service.FindAndReportTodos(input.Solutions.Where(File.Exists), regexes, reporter, input.KeepWhitespaceFlag, solutionProperties, input.ProjectRegexFlag);
 
 			if (reporter is IDisposable disposable)
 			{
