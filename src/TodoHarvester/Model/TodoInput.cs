@@ -17,5 +17,8 @@ namespace TodoHarvester.Model
 	    [Oakton.Description("Project regex. Only compile projects with name matching the regex")]
 	    [Oakton.FlagAlias("pr", true)]
 		public string ProjectRegexFlag;
+	    [Oakton.FlagAlias("g", true)]
+	    [Oakton.Description("Group issues per file.")]
+		public bool GroupIssuesByFileFlag;
 	}
 }

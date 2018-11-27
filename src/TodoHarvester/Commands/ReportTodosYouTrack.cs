@@ -10,7 +10,7 @@ namespace TodoHarvester.Commands
 	{
 		protected override ITodoReporter ReporterFrom(YouTrackInput input)
 		{
-			var reporter = new TodoYouTrackReporter(input.YouTrackUriFlag, input.YouTrackUserFlag, input.YouTrackPasswordFlag, input.YouTrackProjectFlag, input.IssueCommandsFlag);			
+			var reporter = new TodoYouTrackReporter(input.YouTrackUriFlag, input.YouTrackUserFlag, input.YouTrackPasswordFlag, input.YouTrackProjectFlag, input.IssueCommandsFlag, input.GroupIssuesByFileFlag);			
 			return reporter;
 		}
 	}

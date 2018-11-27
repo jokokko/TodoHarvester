@@ -10,7 +10,7 @@ namespace TodoHarvester.Commands
 	{
 		protected override ITodoReporter ReporterFrom(TodoInput input)
 		{
-			var reporter = new TodoConsoleReporter();
+			var reporter = new TodoConsoleReporter(input.GroupIssuesByFileFlag);
 			return reporter;
 		}
 
